@@ -3,6 +3,7 @@ package frc.team3128.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlFrame;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
+import com.ctre.phoenix.motorcontrol.SupplyCurrentLimitConfiguration;
 import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.hal.SimDouble;
@@ -120,6 +121,19 @@ public class NAR_Drivetrain extends SubsystemBase {
         rightLeader.setStatusFramePeriod(StatusFrameEnhanced.Status_1_General, 15);
         rightLeader.setStatusFramePeriod(StatusFrameEnhanced.Status_2_Feedback0, 15);
         rightLeader.setControlFramePeriod(ControlFrame.Control_3_General, 20);
+
+        leftFollower.configSupplyCurrentLimit(
+            new SupplyCurrentLimitConfiguration(true, 60, 60, 0.1)
+        );
+        rightFollower.configSupplyCurrentLimit(
+            new SupplyCurrentLimitConfiguration(true, 60, 60, 0.1)
+        );
+        leftLeader.configSupplyCurrentLimit(
+            new SupplyCurrentLimitConfiguration(true, 60, 60, 0.1)
+        );
+        rightLeader.configSupplyCurrentLimit(
+            new SupplyCurrentLimitConfiguration(true, 60, 60, 0.1)
+        );
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.ctre.phoenix.motorcontrol.ControlFrame;
 import com.ctre.phoenix.motorcontrol.InvertType;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
+import com.ctre.phoenix.motorcontrol.SupplyCurrentLimitConfiguration;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
@@ -56,6 +57,13 @@ public class Climber extends SubsystemBase {
         
         m_leftMotor.setNeutralMode(NeutralMode.Brake);
         m_rightMotor.setNeutralMode(NeutralMode.Brake);
+
+        m_leftMotor.configSupplyCurrentLimit(
+            new SupplyCurrentLimitConfiguration(true, 120, 150, 0.1)
+        );
+        m_rightMotor.configSupplyCurrentLimit(
+            new SupplyCurrentLimitConfiguration(true, 120, 150, 0.1)
+        );
 
         m_leftMotor.setStatusFramePeriod(StatusFrameEnhanced.Status_1_General, 45);
         m_leftMotor.setStatusFramePeriod(StatusFrameEnhanced.Status_2_Feedback0, 45);

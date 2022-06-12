@@ -2,6 +2,7 @@ package frc.team3128.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlFrame;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
+import com.ctre.phoenix.motorcontrol.SupplyCurrentLimitConfiguration;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
@@ -47,6 +48,10 @@ public class Intake extends SubsystemBase {
         m_intake.setStatusFramePeriod(StatusFrameEnhanced.Status_1_General, 45);
         m_intake.setStatusFramePeriod(StatusFrameEnhanced.Status_2_Feedback0, 45);
         m_intake.setControlFramePeriod(ControlFrame.Control_3_General, 20);
+
+        m_intake.configSupplyCurrentLimit(
+            new SupplyCurrentLimitConfiguration(true, 30, 30, 0.1)
+        );
     }
 
     /**

@@ -206,7 +206,7 @@ public class Constants {
         public static final int HOOD_SHOOTER_GEAR_RATIO = 111; // Bowen number
         public static final double ENC_POSITION_CONVERSION_FACTOR = 360.0 / HOOD_SHOOTER_GEAR_RATIO; // Multiply by this to convert encoder rotations to hood degrees
 
-        public static final int HOOD_CURRENT_LIMIT = 10; // Amps
+        public static final int HOOD_CURRENT_LIMIT = 15; // Amps
 
         public static final double MIN_ANGLE = 3.0; // deg
         public static final double MAX_ANGLE = 34.0; // deg
