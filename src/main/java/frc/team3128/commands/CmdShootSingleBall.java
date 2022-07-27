@@ -43,6 +43,7 @@ public class CmdShootSingleBall extends CommandBase {
         prevIsReady = currIsReady;
         currIsReady = shooter.isReady();
     }
+    // test
     
     @Override
     public void end(boolean interrupted) {
